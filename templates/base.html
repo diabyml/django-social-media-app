@@ -1,0 +1,23 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    {% block styles %}{% endblock %}
+    <title>{% block title %}SocialMe{% endblock %}</title>
+  </head>
+  <body>
+    <header class="site-header flex items-center justify-between">
+      <h1 class="home-title">SocialMe</h1>
+      <button class="btn-new-feed">New Feed</button>
+    </header>
+    <main class="site-main">{% block content %}{% endblock %}</main>
+    <footer class="site-footer">
+      <p>Developed by Diabyml</p>
+    </footer>
+    <script src="{% static 'js/app.js' %}"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

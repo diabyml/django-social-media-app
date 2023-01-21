@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* font-size: 62.5%; */
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+}
+
+.site-header {
+  background-color: #fff;
+  padding: 1.1rem 1rem;
+}
+
+.site-main {
+  background-color: #eee;
+}
+
+.site-footer {
+  /* background-color: rgb(104, 100, 100); */
+  background-color: rgb(70, 69, 69);
+  padding: 1.5rem 1rem;
+  color: #fff;
+}
+
+.home-title {
+  cursor: pointer;
+}
+
+.home-title:hover {
+  color: rgb(39, 144, 214);
+  font-weight: bold;
+}
+
+/* utils */
+.flow > * + * {
+  margin-top: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}

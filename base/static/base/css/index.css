@@ -1,0 +1,135 @@
+.hidden {
+  display: none !important;
+}
+
+/* feed lis & feed components */
+section {
+  padding: 2.4rem 1rem;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.feed-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+
+.feed {
+  background-color: #fff;
+  padding: 1.4rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.feed:hover,
+.feed:active {
+  background-color: rgb(70, 69, 69);
+  color: #fff;
+}
+
+/* feed detail */
+/* .feed-detail {
+  background-color: red;
+} */
+
+.feed-detail .feed-title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.feed-detail .feed-content {
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.comment-section {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 16px;
+}
+
+.feed-comments {
+  list-style: none;
+}
+
+/* .feed-comments li {
+  outline: 1px solid red;
+} */
+
+.feed-comments li .user {
+  display: flex;
+}
+
+.feed-comments .user .username {
+  font-size: 0.8rem;
+}
+
+.feed-comments .profile {
+  width: 40px;
+  height: 40px;
+  background-color: #979090;
+  border-radius: 50%;
+  margin-right: 0.7rem;
+  /* flex-basis: 100%; */
+  flex-shrink: 0;
+}
+
+/* new feed component */
+
+/* utils elements */
+
+.btn {
+  display: inline-block;
+}
+
+/* loading bar */
+.loading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid rgb(119, 116, 116);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(102, 98, 98) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

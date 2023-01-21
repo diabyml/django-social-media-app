@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+<!-- load static -->
+{% load static %}
+
+<!-- load styles -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'base/css/index.css' %}" />
+{% endblock %}
+
+<!-- page title -->
+{% block title %} SocialMe {% endblock %}
+
+<!-- main content -->
+{% block content %}
+
+<!-- loading bar -->
+<div class="loading hidden">
+  <div class="lds-ring">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <!-- feed lis component -->
+    <ul class="feed-list"></ul>
+
+    <!-- feed detail compoent -->
+    <div class="feed-detail flow hidden">
+      <div class="content"></div>
+      <div class="comment-section flow">
+        <form class="form">
+          {% csrf_token %}
+          <div>
+            <input class="form-input" type="text" name="message" />
+            <input class="btn" type="submit" value="Send" />
+          </div>
+        </form>
+        <ul class="feed-comments flow"></ul>
+      </div>
+    </div>
+
+    <!-- new feed compoent -->
+    <div class="new-feed hidden">
+      <h1>New Feed</h1>
+      <form
+        class="new-feed-form"
+        action="new-feed/"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="Title" />
+        </div>
+        <div class="form-group">
+          <label for="excerpt">Excerpt</label>
+          <input
+            type="text"
+            id="excerpt"
+            name="excerpt"
+            placeholder="Excerpt"
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            name="content"
+            id="content"
+            cols="30"
+            rows="10"
+            placeholder="Content"
+          ></textarea>
+        </div>
+        <div>
+          <input
+            type="file"
+            name="image"
+            accept="image/*"
+            required=""
+            id="id_image"
+          />
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Post" class="btn btn-post-feed" />
+        </div>
+      </form>
+    </div>
+
+    <!-- end container -->
+  </div>
+</section>
+{% endblock %}
+
+<!-- scripts load js -->
+{% block scripts %}
+<script src="{% static 'base/js/index.js' %}"></script>
+{% endblock %}
